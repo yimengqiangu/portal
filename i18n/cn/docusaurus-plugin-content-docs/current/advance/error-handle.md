@@ -94,7 +94,7 @@ Content-Length: 19
             return nil, errorx.NewDefaultError("参数错误")
         }
     
-        userInfo, err := l.svcCtx.UserModel.FindOneByNumber(req.Username)
+        userInfo, err := l.svcCtx.UserModel.FindOneByNumber(l.ctx, req.Username)
         switch err {
         case nil:
         case model.ErrNotFound:
